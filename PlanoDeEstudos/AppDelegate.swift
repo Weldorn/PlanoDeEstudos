@@ -57,6 +57,9 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         case ActionIdentifier.cancel:
             break
         case UNNotificationDefaultActionIdentifier:
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "orange")
+            window?.rootViewController?.show(vc, sender: nil)
             break
         case UNNotificationDismissActionIdentifier:
             break
